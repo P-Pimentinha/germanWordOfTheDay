@@ -6,7 +6,7 @@ let deuWord = '';
 let engWord = '';
 
 function randomWordGenerator() {
-  const random = Math.floor(Math.random() * 31);
+  const random = Math.floor(Math.random() * 34);
 
   deuWord = words[random].wort;
   engWord = words[random].word;

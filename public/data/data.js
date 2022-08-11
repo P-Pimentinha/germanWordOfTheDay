@@ -155,19 +155,19 @@ const words = [
     word: 'reason/common sense',
   },
   {
-    id: 23,
-    wort: 'Locke',
-    word: 'curl',
+    id: 31,
+    wort: 'herablassend',
+    word: 'condescending',
   },
   {
-    id: 23,
-    wort: 'Locke',
-    word: 'curl',
+    id: 32,
+    wort: 'verurteilt',
+    word: 'sentenced',
   },
   {
-    id: 23,
-    wort: 'Locke',
-    word: 'curl',
+    id: 33,
+    wort: 'Lockige haare',
+    word: 'hair',
   },
   {
     id: 23,
