@@ -46,10 +46,8 @@ const words = [
   },
   {
     id: 9,
-    wort: 'unabhängig',
-    wortZwei: '',
-    word: 'independent',
-    wordTwo: '',
+    wort: 'abhängig / unabhängig',
+    word: 'dependent / independent',
   },
   {
     id: 10,
