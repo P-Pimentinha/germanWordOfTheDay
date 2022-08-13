@@ -47,7 +47,9 @@ const words = [
   {
     id: 9,
     wort: 'unabhängig',
+    wortZwei: '',
     word: 'independent',
+    wordTwo: '',
   },
   {
     id: 10,
