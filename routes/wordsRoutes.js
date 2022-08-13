@@ -1,8 +1,8 @@
 import express from 'express';
 const router = express.Router();
 
-import { createWord } from '../controllers/wordsController.js';
+import { createWord, getWords } from '../controllers/wordsController.js';
 
-router.route('/').post(createWord);
+router.route('/').post(createWord).get(getWords);
 
 export default router;

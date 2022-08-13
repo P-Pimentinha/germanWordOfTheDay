@@ -13,4 +13,9 @@ const createWord = async (req, res) => {
   res.status(StatusCodes.CREATED).json({ words });
 };
 
-export { createWord };
+const getWords = async (req, res) => {
+  const words = await Word.find();
+  res.status(StatusCodes.OK).json({ words });
+};
+
+export { createWord, getWords };
