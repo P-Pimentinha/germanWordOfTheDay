@@ -5,8 +5,14 @@ import compression from 'compression';
 import connectDB from './db/connect.js';
 import dotenv from 'dotenv';
 dotenv.config();
+import 'express-async-errors';
 
+//routers
 import wordRouter from './routes/wordsRoutes.js';
+
+//middleware
+import notFoundMiddleware from './middleware/not-found.js';
+import errorHandlerMiddleware from './middleware/error-handler.js';
 
 app.use(express.static('public'));
 /* app.use(express.static(path.join(__dirname, '/public/css'))); */
@@ -20,6 +26,9 @@ app.use(helmet());
 app.use(compression());
 
 app.use('/api/v1/words', wordRouter);
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5000;
 
