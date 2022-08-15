@@ -22,27 +22,6 @@ const getAllWords = async () => {
 };
 
 getAllWords();
-/* 
-const sendPostRequest = async (dataToSend) => {
-  try {
-    const resp = await axios.post(url, dataToSend);
-  } catch (err) {
-    // Handle Error Here
-    console.error(err);
-  }
-};
-
-const postRandom = () => {
-  try {
-    words.map((word) => {
-      sendPostRequest(word);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-postRandom(); */
 
 const randomWordGenerator = () => {
   const random = Math.floor(Math.random() * wordsApiFetch.length);
