@@ -1,8 +1,18 @@
 import words from '../data/data.js';
 const button = document.querySelector('.start-btn');
+const buttonTwo = document.querySelector('.start-btn-two');
+
+const subjectData = [
+  { subject: 'Read Book' },
+  { subject: 'Write One Page' },
+  { subject: 'Listen PodCast' },
+  { subject: 'Watch Serie' },
+  { subject: 'Generate random word and write 5 sentences' },
+];
 
 let deuWord = '';
 let engWord = '';
+let randomSubject = '';
 let wordsApiFetch = [];
 
 const url = '/api/v1/words/';
@@ -30,15 +40,25 @@ const randomWordGenerator = () => {
 
   engWord = wordsApiFetch[random].word;
 
-  const germanWord = (document.getElementById('germanWord').innerHTML =
-    deuWord);
+  document.getElementById('germanWord').innerHTML = deuWord;
 
-  const englishWord = (document.getElementById('englishWord').innerHTML =
-    engWord);
+  document.getElementById('englishWord').innerHTML = engWord;
+};
+
+const randomSubjectGenerator = () => {
+  const random = Math.floor(Math.random() * subjectData.length);
+
+  randomSubject = subjectData[random].subject;
+
+  document.getElementById('whatToStudy').innerHTML = randomSubject;
 };
 
 button.addEventListener('click', () => {
   randomWordGenerator();
+});
+
+buttonTwo.addEventListener('click', () => {
+  randomSubjectGenerator();
 });
 
 /* setInterval(randomWordGenerator, 6000); */
