@@ -1,10 +1,11 @@
 import words from '../data/data.js';
-
 const button = document.querySelector('.start-btn');
 
 let deuWord = '';
 let engWord = '';
-/* const url = 'http://localhost:5000/api/v1/words/';
+let wordsApiFetch = [];
+
+const url = '/api/v1/words/';
 
 const getAllWords = async () => {
   try {
@@ -12,28 +13,50 @@ const getAllWords = async () => {
     const { words } = data;
 
     words.map((word) => {
-      console.log(word.word);
+      wordsApiFetch.push(word);
+      return;
     });
   } catch (error) {
     console.log(error);
   }
 };
 
-getAllWords(); */
+getAllWords();
+/* 
+const sendPostRequest = async (dataToSend) => {
+  try {
+    const resp = await axios.post(url, dataToSend);
+  } catch (err) {
+    // Handle Error Here
+    console.error(err);
+  }
+};
 
-function randomWordGenerator() {
-  const random = Math.floor(Math.random() * 34);
+const postRandom = () => {
+  try {
+    words.map((word) => {
+      sendPostRequest(word);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-  deuWord = words[random].wort;
+postRandom(); */
 
-  engWord = words[random].word;
+const randomWordGenerator = () => {
+  const random = Math.floor(Math.random() * wordsApiFetch.length);
+
+  deuWord = wordsApiFetch[random].wort;
+
+  engWord = wordsApiFetch[random].word;
 
   const germanWord = (document.getElementById('germanWord').innerHTML =
     deuWord);
 
   const englishWord = (document.getElementById('englishWord').innerHTML =
     engWord);
-}
+};
 
 button.addEventListener('click', () => {
   randomWordGenerator();

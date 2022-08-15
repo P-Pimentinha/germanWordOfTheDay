@@ -3,6 +3,8 @@ const router = express.Router();
 
 import { createWord, getWords } from '../controllers/wordsController.js';
 
-router.route('/').post(createWord).get(getWords);
+router.route('/').get(getWords).post(createWord);
+
+/* router.route('/').get(getWords); */
 
 export default router;
