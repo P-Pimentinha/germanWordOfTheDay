@@ -4,6 +4,22 @@ const button = document.querySelector('.start-btn');
 
 let deuWord = '';
 let engWord = '';
+/* const url = 'http://localhost:5000/api/v1/words/';
+
+const getAllWords = async () => {
+  try {
+    const { data } = await axios.get(url);
+    const { words } = data;
+
+    words.map((word) => {
+      console.log(word.word);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getAllWords(); */
 
 function randomWordGenerator() {
   const random = Math.floor(Math.random() * 34);
