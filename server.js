@@ -1,10 +1,12 @@
 import express from 'express';
 const app = express();
-import helmet from 'helmet';
-import compression from 'compression';
 import connectDB from './db/connect.js';
 import dotenv from 'dotenv';
 dotenv.config();
+import helmet from 'helmet';
+import compression from 'compression';
+
+//error handling
 import 'express-async-errors';
 
 //routers
@@ -27,6 +29,7 @@ app.use(compression());
 
 app.use('/api/v1/words', wordRouter);
 
+//error handling
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 

@@ -1,6 +1,7 @@
 import words from '../data/data.js';
 const button = document.querySelector('.start-btn');
 const buttonTwo = document.querySelector('.start-btn-two');
+import goodMorning from './test.js';
 
 const subjectData = [
   { subject: 'Read Book' },
